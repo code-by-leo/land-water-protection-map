@@ -1,0 +1,44 @@
+# ---------------------------------------------------------------
+# PII / sensitive data — never commit these
+# ---------------------------------------------------------------
+# Raw survey responses and anything holding real names, emails,
+# phone numbers, or addresses of respondents.
+private/
+data/private/
+data/raw/
+*_raw.csv
+*_raw.json
+*_private.*
+*.private.*
+responses*.csv
+responses*.xlsx
+survey*.csv
+survey*.xlsx
+
+# Credentials
+.env
+.env.*
+*.pem
+*.key
+secrets.*
+credentials.*
+
+# ---------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------
+# macOS / editors
+# ---------------------------------------------------------------
+.DS_Store
+.AppleDouble
+._*
+.vscode/
+.idea/
+*.swp

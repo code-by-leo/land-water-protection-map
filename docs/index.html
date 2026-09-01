@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_3fda1bb10efd3056ec5b6c1671a5ed5f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; top: 10px; left: 50%; transform: translateX(-50%);
+            background-color: #eee2bc; padding: 8px 18px; border-radius: 6px;
+            font-family: Helvetica, Arial, sans-serif; font-size: 15px;
+            font-weight: 600; color: #2b2b2b; z-index: 9999;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
+  Current local land/water protective efforts connected to our geographies
+</div>
+    
+            <div class="folium-map" id="map_3fda1bb10efd3056ec5b6c1671a5ed5f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_3fda1bb10efd3056ec5b6c1671a5ed5f = L.map(
+                "map_3fda1bb10efd3056ec5b6c1671a5ed5f",
+                {
+                    center: [44.0, -110.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "maxBounds": [
+[
+-90,
+-180,
+],
+[
+90,
+180,
+],
+],
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+  "maxBounds": [
+[
+18.0,
+-172.0,
+],
+[
+72.0,
+-66.0,
+],
+],
+}
+
+                }
+            );
+            L.control.scale().addTo(map_3fda1bb10efd3056ec5b6c1671a5ed5f);
+
+            
+
+        
+    
+            var tile_layer_7ab057573fe15742942f2b2ff84262de = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 3,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u2014 Esri, DeLorme, NAVTEQ",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_7ab057573fe15742942f2b2ff84262de.addTo(map_3fda1bb10efd3056ec5b6c1671a5ed5f);
+        
+    
+            map_3fda1bb10efd3056ec5b6c1671a5ed5f.fitBounds(
+                [[18.0, -172.0], [72.0, -66.0]],
+                {}
+            );
+        
+    
+            var circle_marker_2faf08c6f05df1782d280abc1d50e84c = L.circleMarker(
+                [40.7196, -73.9748],
+                {"bubblingMouseEvents": true, "color": "#a21d11", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a21d11", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_3fda1bb10efd3056ec5b6c1671a5ed5f);
+        
+    
+        var popup_4b020afb0501b00169410301cd898794 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cb7d07d46372081af4e71bff6d438a0e = $(`<div id="html_cb7d07d46372081af4e71bff6d438a0e" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Helvetica, Arial, sans-serif; min-width: 260px; max-width: 320px;">       <div style="font-weight: 700; font-size: 14px; color: #a21d11;">Save East River Park</div>       <div style="font-size: 12px; color: #555; margin: 4px 0 8px 0;">New York</div>       <div style="font-size: 12px; color: #2b2b2b; margin-top: 6px;">         <div style="margin-bottom: 6px;"><span style="font-weight:600;">Who is on the ground:</span> East River Park Action; community members with support from some electeds</div>         <div style="margin-bottom: 6px;"><span style="font-weight:600;">Who/what is being fought:</span> Lower Manhattan Coastal Resiliency Plan (City of New York); developers & the city</div>         <div><span style="font-weight:600;">Support requested:</span> Public awareness, community building, and funds to preserve park land and natural habitat</div>       </div>     </div>     </div>`)[0];
+                popup_4b020afb0501b00169410301cd898794.setContent(html_cb7d07d46372081af4e71bff6d438a0e);
+            
+        
+
+        circle_marker_2faf08c6f05df1782d280abc1d50e84c.bindPopup(popup_4b020afb0501b00169410301cd898794)
+        ;
+
+        
+    
+    
+            var circle_marker_807045d5ab3c3b723d24d3f3f87e62cd = L.circleMarker(
+                [40.7163, -73.9999],
+                {"bubblingMouseEvents": true, "color": "#8b0e0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8b0e0e", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_3fda1bb10efd3056ec5b6c1671a5ed5f);
+        
+    
+        var popup_828ca6b653e68ba57873b04fedb51337 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_66d2c198aa39047275ac6ee8c790723d = $(`<div id="html_66d2c198aa39047275ac6ee8c790723d" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Helvetica, Arial, sans-serif; min-width: 260px; max-width: 320px;">       <div style="font-weight: 700; font-size: 14px; color: #8b0e0e;">No mega jail in Chinatown</div>       <div style="font-size: 12px; color: #555; margin: 4px 0 8px 0;">New York</div>       <div style="font-size: 12px; color: #2b2b2b; margin-top: 6px;">         <div style="margin-bottom: 6px;"><span style="font-weight:600;">Who is on the ground:</span> Youth Against Displacement</div>         <div style="margin-bottom: 6px;"><span style="font-weight:600;">Who/what is being fought:</span> City of New York; big real estate</div>         <div><span style="font-weight:600;">Support requested:</span> Showing up to protests to make the issue public and known</div>       </div>     </div>     </div>`)[0];
+                popup_828ca6b653e68ba57873b04fedb51337.setContent(html_66d2c198aa39047275ac6ee8c790723d);
+            
+        
+
+        circle_marker_807045d5ab3c3b723d24d3f3f87e62cd.bindPopup(popup_828ca6b653e68ba57873b04fedb51337)
+        ;
+
+        
+    
+    
+            var circle_marker_0b47862725e30b7ce63656babc791a99 = L.circleMarker(
+                [25.9975, -97.1558],
+                {"bubblingMouseEvents": true, "color": "#c83214", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c83214", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_3fda1bb10efd3056ec5b6c1671a5ed5f);
+        
+    
+        var popup_b2ddff18903c25088606b6e1e02fc54a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4469db7e4d7f40cb66d268bd28975182 = $(`<div id="html_4469db7e4d7f40cb66d268bd28975182" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Helvetica, Arial, sans-serif; min-width: 260px; max-width: 320px;">       <div style="font-weight: 700; font-size: 14px; color: #c83214;">Carrizo Comecrudo Tribe vs SpaceX</div>       <div style="font-size: 12px; color: #555; margin: 4px 0 8px 0;">Texas</div>       <div style="font-size: 12px; color: #2b2b2b; margin-top: 6px;">         <div style="margin-bottom: 6px;"><span style="font-weight:600;">Who is on the ground:</span> Carrizo Comecrudo Tribe of Texas; South Texas Environmental Justice Network</div>         <div style="margin-bottom: 6px;"><span style="font-weight:600;">Who/what is being fought:</span> SpaceX / Elon Musk; TCEQ; City Council of Brownsville</div>         <div><span style="font-weight:600;">Support requested:</span> Legal, public awareness, meeting space</div>       </div>     </div>     </div>`)[0];
+                popup_b2ddff18903c25088606b6e1e02fc54a.setContent(html_4469db7e4d7f40cb66d268bd28975182);
+            
+        
+
+        circle_marker_0b47862725e30b7ce63656babc791a99.bindPopup(popup_b2ddff18903c25088606b6e1e02fc54a)
+        ;
+
+        
+    
+    
+            var circle_marker_54d5628ae7d5d35b673e68b01162a5b0 = L.circleMarker(
+                [29.7604, -95.3698],
+                {"bubblingMouseEvents": true, "color": "#a21d11", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a21d11", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_3fda1bb10efd3056ec5b6c1671a5ed5f);
+        
+    
+        var popup_fe852de06ba8a0390379018a000063fa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e5c580bae2202bf9158ee76c458e73fa = $(`<div id="html_e5c580bae2202bf9158ee76c458e73fa" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Helvetica, Arial, sans-serif; min-width: 260px; max-width: 320px;">       <div style="font-weight: 700; font-size: 14px; color: #a21d11;">Bayou City Waterkeepers</div>       <div style="font-size: 12px; color: #555; margin: 4px 0 8px 0;">Houston</div>       <div style="font-size: 12px; color: #2b2b2b; margin-top: 6px;">         <div style="margin-bottom: 6px;"><span style="font-weight:600;">Who is on the ground:</span> Bayou City Waterkeepers; National Wildlife Federation; Clean Water Action</div>         <div style="margin-bottom: 6px;"><span style="font-weight:600;">Who/what is being fought:</span> WOTUS rollback / Trump Administration (Clean Water Act protections)</div>         <div><span style="font-weight:600;">Support requested:</span> Legal, public awareness, meeting space</div>       </div>     </div>     </div>`)[0];
+                popup_fe852de06ba8a0390379018a000063fa.setContent(html_e5c580bae2202bf9158ee76c458e73fa);
+            
+        
+
+        circle_marker_54d5628ae7d5d35b673e68b01162a5b0.bindPopup(popup_fe852de06ba8a0390379018a000063fa)
+        ;
+
+        
+    
+    
+            var circle_marker_99b5405503cbfd47c1d1d4b061b6e667 = L.circleMarker(
+                [30.4515, -91.1871],
+                {"bubblingMouseEvents": true, "color": "#8b0e0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8b0e0e", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_3fda1bb10efd3056ec5b6c1671a5ed5f);
+        
+    
+        var popup_7da228adceeef0f3db969c09897fad36 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f508c78a4c71dc94ad88fc80d9e9f794 = $(`<div id="html_f508c78a4c71dc94ad88fc80d9e9f794" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Helvetica, Arial, sans-serif; min-width: 260px; max-width: 320px;">       <div style="font-weight: 700; font-size: 14px; color: #8b0e0e;">Land Memory Bank & Seed Exchange</div>       <div style="font-size: 12px; color: #555; margin: 4px 0 8px 0;">Louisiana</div>       <div style="font-size: 12px; color: #2b2b2b; margin-top: 6px;">         <div style="margin-bottom: 6px;"><span style="font-weight:600;">Who is on the ground:</span> Land Memory Bank & Seed Exchange</div>         <div style="margin-bottom: 6px;"><span style="font-weight:600;">Who/what is being fought:</span> Habitat loss and threats to Coastal Indigenous & local cultures (United Houma Nation, Louisiana French, African American communities); loss of community knowledge & food sovereignty</div>         <div><span style="font-weight:600;">Support requested:</span> Regranting support and storytelling/amplification (e.g., NPN National Conference, e-news), with compensation</div>       </div>     </div>     </div>`)[0];
+                popup_7da228adceeef0f3db969c09897fad36.setContent(html_f508c78a4c71dc94ad88fc80d9e9f794);
+            
+        
+
+        circle_marker_99b5405503cbfd47c1d1d4b061b6e667.bindPopup(popup_7da228adceeef0f3db969c09897fad36)
+        ;
+
+        
+    
+    
+            var circle_marker_4351baed4ae2c1dff874649a8c2665fb = L.circleMarker(
+                [29.9511, -90.0715],
+                {"bubblingMouseEvents": true, "color": "#c83214", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c83214", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_3fda1bb10efd3056ec5b6c1671a5ed5f);
+        
+    
+        var popup_ff95cf315ab4bf0f1f73fef634844239 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_70dca053c9a42aefd18f9e2f35bfee73 = $(`<div id="html_70dca053c9a42aefd18f9e2f35bfee73" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Helvetica, Arial, sans-serif; min-width: 260px; max-width: 320px;">       <div style="font-weight: 700; font-size: 14px; color: #c83214;">Bvlbancha Collective</div>       <div style="font-size: 12px; color: #555; margin: 4px 0 8px 0;">Louisiana</div>       <div style="font-size: 12px; color: #2b2b2b; margin-top: 6px;">         <div style="margin-bottom: 6px;"><span style="font-weight:600;">Who is on the ground:</span> Bvlbancha Collective</div>         <div style="margin-bottom: 6px;"><span style="font-weight:600;">Who/what is being fought:</span> Erasure of Gulf South Indigenous peoples — fighting for cultural revitalization, community resilience, and sovereignty for United Houma Nation, Tunica-Biloxi Tribe, and others</div>         <div><span style="font-weight:600;">Support requested:</span> Regranting support and storytelling/amplification, with compensation</div>       </div>     </div>     </div>`)[0];
+                popup_ff95cf315ab4bf0f1f73fef634844239.setContent(html_70dca053c9a42aefd18f9e2f35bfee73);
+            
+        
+
+        circle_marker_4351baed4ae2c1dff874649a8c2665fb.bindPopup(popup_ff95cf315ab4bf0f1f73fef634844239)
+        ;
+
+        
+    
+    
+            var circle_marker_593c22fb865529b0e8631e0aedb76f0f = L.circleMarker(
+                [58.7184, -156.6612],
+                {"bubblingMouseEvents": true, "color": "#a21d11", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a21d11", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_3fda1bb10efd3056ec5b6c1671a5ed5f);
+        
+    
+        var popup_8d92f05867786959d8c4a9adb655a83c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0acc4cd8aa8acfaea6596680e0c40db4 = $(`<div id="html_0acc4cd8aa8acfaea6596680e0c40db4" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Helvetica, Arial, sans-serif; min-width: 260px; max-width: 320px;">       <div style="font-weight: 700; font-size: 14px; color: #a21d11;">Bristol Bay / Pebble Mine Opposition</div>       <div style="font-size: 12px; color: #555; margin: 4px 0 8px 0;">Alaska</div>       <div style="font-size: 12px; color: #2b2b2b; margin-top: 6px;">         <div style="margin-bottom: 6px;"><span style="font-weight:600;">Who is on the ground:</span> Bristol Bay residents and Alaska Native groups</div>         <div style="margin-bottom: 6px;"><span style="font-weight:600;">Who/what is being fought:</span> Pebble Mine; the State of Alaska's current administration; other pro-mine forces</div>         <div><span style="font-weight:600;">Support requested:</span> Money; support in telling the story and vision of a world that doesn't eviscerate living systems for short-term profit</div>       </div>     </div>     </div>`)[0];
+                popup_8d92f05867786959d8c4a9adb655a83c.setContent(html_0acc4cd8aa8acfaea6596680e0c40db4);
+            
+        
+
+        circle_marker_593c22fb865529b0e8631e0aedb76f0f.bindPopup(popup_8d92f05867786959d8c4a9adb655a83c)
+        ;
+
+        
+    
+    
+            var circle_marker_e86f2a5adbbcd43126852d6e0a7a7ecd = L.circleMarker(
+                [61.2181, -149.9003],
+                {"bubblingMouseEvents": true, "color": "#8b0e0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8b0e0e", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_3fda1bb10efd3056ec5b6c1671a5ed5f);
+        
+    
+        var popup_229e066679580cb5c5207f2f6a17cd4f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cd521f796a200e504b64fffa74c026c8 = $(`<div id="html_cd521f796a200e504b64fffa74c026c8" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Helvetica, Arial, sans-serif; min-width: 260px; max-width: 320px;">       <div style="font-weight: 700; font-size: 14px; color: #8b0e0e;">Just Transition / Native Movement</div>       <div style="font-size: 12px; color: #555; margin: 4px 0 8px 0;">Alaska</div>       <div style="font-size: 12px; color: #2b2b2b; margin-top: 6px;">         <div style="margin-bottom: 6px;"><span style="font-weight:600;">Who is on the ground:</span> Coalition of organizations including Native Movement</div>         <div style="margin-bottom: 6px;"><span style="font-weight:600;">Who/what is being fought:</span> An ethos of extraction manifesting in corporations, policies, and government actions</div>         <div><span style="font-weight:600;">Support requested:</span> Money; support in telling the story and vision of a regenerative economy</div>       </div>     </div>     </div>`)[0];
+                popup_229e066679580cb5c5207f2f6a17cd4f.setContent(html_cd521f796a200e504b64fffa74c026c8);
+            
+        
+
+        circle_marker_e86f2a5adbbcd43126852d6e0a7a7ecd.bindPopup(popup_229e066679580cb5c5207f2f6a17cd4f)
+        ;
+
+        
+    
+    
+            var circle_marker_f86e70f9324611f2041222d67bfa8ffa = L.circleMarker(
+                [43.0481, -76.1474],
+                {"bubblingMouseEvents": true, "color": "#c83214", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c83214", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_3fda1bb10efd3056ec5b6c1671a5ed5f);
+        
+    
+        var popup_354428f99da709bf3407610b2b287d89 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5ef0be54b73f64671d9dffdd075669d3 = $(`<div id="html_5ef0be54b73f64671d9dffdd075669d3" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Helvetica, Arial, sans-serif; min-width: 260px; max-width: 320px;">       <div style="font-weight: 700; font-size: 14px; color: #c83214;">Onondaga Land Back</div>       <div style="font-size: 12px; color: #555; margin: 4px 0 8px 0;">New York</div>       <div style="font-size: 12px; color: #2b2b2b; margin-top: 6px;">         <div style="margin-bottom: 6px;"><span style="font-weight:600;">Who is on the ground:</span> Onondaga Nation (legal counsel); St. Regis Mohawk Tribe (Black Ash)</div>         <div style="margin-bottom: 6px;"><span style="font-weight:600;">Who/what is being fought:</span> New York State / US government</div>         <div><span style="font-weight:600;">Support requested:</span> Pressure on politicians; more publicity for the cause</div>       </div>     </div>     </div>`)[0];
+                popup_354428f99da709bf3407610b2b287d89.setContent(html_5ef0be54b73f64671d9dffdd075669d3);
+            
+        
+
+        circle_marker_f86e70f9324611f2041222d67bfa8ffa.bindPopup(popup_354428f99da709bf3407610b2b287d89)
+        ;
+
+        
+    
+    
+            var circle_marker_82737bdb7a2b7fc62513970e46f80986 = L.circleMarker(
+                [45.5152, -122.6784],
+                {"bubblingMouseEvents": true, "color": "#a21d11", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a21d11", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_3fda1bb10efd3056ec5b6c1671a5ed5f);
+        
+    
+        var popup_75c937edf64ee5eaf05ecc6395086fcb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a008491c958909b02778c94a1728ba34 = $(`<div id="html_a008491c958909b02778c94a1728ba34" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Helvetica, Arial, sans-serif; min-width: 260px; max-width: 320px;">       <div style="font-weight: 700; font-size: 14px; color: #a21d11;">Canoe Family Water & Climate Actions</div>       <div style="font-size: 12px; color: #555; margin: 4px 0 8px 0;">Oregon</div>       <div style="font-size: 12px; color: #2b2b2b; margin-top: 6px;">         <div style="margin-bottom: 6px;"><span style="font-weight:600;">Who is on the ground:</span> Canoe Family</div>         <div style="margin-bottom: 6px;"><span style="font-weight:600;">Who/what is being fought:</span> Oregon government</div>         <div><span style="font-weight:600;">Support requested:</span> Not specified by respondent</div>       </div>     </div>     </div>`)[0];
+                popup_75c937edf64ee5eaf05ecc6395086fcb.setContent(html_a008491c958909b02778c94a1728ba34);
+            
+        
+
+        circle_marker_82737bdb7a2b7fc62513970e46f80986.bindPopup(popup_75c937edf64ee5eaf05ecc6395086fcb)
+        ;
+
+        
+    
+    
+            var circle_marker_5b784748329816052f43be69c19529ae = L.circleMarker(
+                [45.3526, -122.6178],
+                {"bubblingMouseEvents": true, "color": "#8b0e0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8b0e0e", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_3fda1bb10efd3056ec5b6c1671a5ed5f);
+        
+    
+        var popup_be907b860f9125b1ddb86e89959eadf4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_89d41425ba2a326ba2d140b3d085652d = $(`<div id="html_89d41425ba2a326ba2d140b3d085652d" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Helvetica, Arial, sans-serif; min-width: 260px; max-width: 320px;">       <div style="font-weight: 700; font-size: 14px; color: #8b0e0e;">Willamette Falls Return</div>       <div style="font-size: 12px; color: #555; margin: 4px 0 8px 0;">Oregon</div>       <div style="font-size: 12px; color: #2b2b2b; margin-top: 6px;">         <div style="margin-bottom: 6px;"><span style="font-weight:600;">Who is on the ground:</span> Canoe Family (undamning of rivers / Willamette Falls)</div>         <div style="margin-bottom: 6px;"><span style="font-weight:600;">Who/what is being fought:</span> Oregon government</div>         <div><span style="font-weight:600;">Support requested:</span> Not specified by respondent</div>       </div>     </div>     </div>`)[0];
+                popup_be907b860f9125b1ddb86e89959eadf4.setContent(html_89d41425ba2a326ba2d140b3d085652d);
+            
+        
+
+        circle_marker_5b784748329816052f43be69c19529ae.bindPopup(popup_be907b860f9125b1ddb86e89959eadf4)
+        ;
+
+        
+    
+    
+            var circle_marker_579ecddc5c9465763a3a7ff1bb0433f5 = L.circleMarker(
+                [30.4383, -84.2807],
+                {"bubblingMouseEvents": true, "color": "#c83214", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c83214", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 2}
+            ).addTo(map_3fda1bb10efd3056ec5b6c1671a5ed5f);
+        
+    
+        var popup_6315bb688f1fd14195b0aad03810fb90 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d1a5aaac41a824630c55daef6d2bd4c6 = $(`<div id="html_d1a5aaac41a824630c55daef6d2bd4c6" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Helvetica, Arial, sans-serif; min-width: 260px; max-width: 320px;">       <div style="font-weight: 700; font-size: 14px; color: #c83214;">Lake Munson / Lake Jackson Protection</div>       <div style="font-size: 12px; color: #555; margin: 4px 0 8px 0;">Florida</div>       <div style="font-size: 12px; color: #2b2b2b; margin-top: 6px;">         <div style="margin-bottom: 6px;"><span style="font-weight:600;">Who is on the ground:</span> Current group unknown; Seminole communities requesting inclusion</div>         <div style="margin-bottom: 6px;"><span style="font-weight:600;">Who/what is being fought:</span> Plans to alter Lake Munson and Lake Jackson (water draw-down)</div>         <div><span style="font-weight:600;">Support requested:</span> Not specified by respondent</div>       </div>     </div>     </div>`)[0];
+                popup_6315bb688f1fd14195b0aad03810fb90.setContent(html_d1a5aaac41a824630c55daef6d2bd4c6);
+            
+        
+
+        circle_marker_579ecddc5c9465763a3a7ff1bb0433f5.bindPopup(popup_6315bb688f1fd14195b0aad03810fb90)
+        ;
+
+        
+    
+</script>
+</html>
